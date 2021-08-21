@@ -1,0 +1,4 @@
+<div class="header-section" *ngIf="personalInformation">
+  <div class="name title">{{ personalInformation.name }}</div>
+  <div class="description" *ngIf="personalInformation.shortDescription">{{ personalInformation.shortDescription }}</div>
+</div>

@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/cv-page",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

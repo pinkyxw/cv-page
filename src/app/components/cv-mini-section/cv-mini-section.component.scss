@@ -1,0 +1,35 @@
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  // background-color: rgb(193, 202, 209);
+  margin: 5px 2.5px;
+  padding: 0px 10px;
+
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+      width: 10px;
+      height: 10px;
+      margin: 0 8px;
+      background-size: contain;
+    }
+
+    .title {
+      // background: rgb(104, 104, 139);
+      font-size: 24px;
+      font-family: "Montserrat Regular";
+    }
+  }
+
+  .content-container {
+    // background: burlywood;
+    margin: 10px;
+  }
+
+}

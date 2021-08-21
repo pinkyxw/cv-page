@@ -1,0 +1,31 @@
+:host:last-of-type {
+  .sub-section-container {
+    margin-bottom: -20px;
+  }
+}
+
+.sub-section-container {
+  display: flex;
+  flex-direction: row;
+
+
+  .timeline-container {
+    .dot {
+      position: relative;
+      left: -9px;
+      top: -6px;
+      height: 16px;
+      width: 16px;
+      background-size: contain;
+      background-color: white;
+    }
+  }
+
+  .content-container {
+    margin-top: -8px;
+    margin-bottom: 14px;
+    padding: 0px 10px 10px 10px;
+    // background: red;
+  }
+
+}

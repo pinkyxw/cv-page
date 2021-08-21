@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+
+.i-no-repeat {
+  background-repeat: no-repeat;
+}
+
+.i-close-cross {
+  @extend .i-no-repeat;
+  background-image: url('/assets/icons/close-cross.svg');
+}
+
+.i-circle {
+  @extend .i-no-repeat;
+  background-image: url('/assets/icons/circle.svg');
+}
+
+.i-education {
+  @extend .i-no-repeat;
+  background-image: url('/assets/icons/education.svg');
+}
+
+.i-certificate {
+  @extend .i-no-repeat;
+  background-image: url('/assets/icons/certificate.svg');
+}
+
+.i-work {
+  @extend .i-no-repeat;
+  background-image: url('/assets/icons/work.svg');
+}
+
+.i-person {
+  @extend .i-no-repeat;
+  background-image: url('/assets/icons/person.svg');
+}
+
+.title {
+  font-family: "Montserrat Regular";
+  // text-transform: uppercase;
+  font-variant-caps: petite-caps;
+}
