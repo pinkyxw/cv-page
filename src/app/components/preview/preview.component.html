@@ -1,0 +1,69 @@
+<div class="background">
+  <div class="cv">
+    <app-cv-header [personalInformation]='person.personalInformation'></app-cv-header>
+    <div class="cv-body">
+      <div class="left-side">
+
+        <app-cv-mini-section [title]="'Contacto'">
+          <div>{{ person.personalInformation.phone }}</div>
+          <div>{{ person.personalInformation.email }}</div>
+        </app-cv-mini-section>
+
+        <app-cv-mini-section [title]="'Links'">
+          <!-- <a href="favicon.ico">hoal</a> -->
+          <div *ngFor="let link of person.links">
+            <div class="link mini-item" (click)="redirect(link.url)" >{{ link.alias }}</div>
+          </div>
+        </app-cv-mini-section>
+
+        <app-cv-mini-section [title]="'Competencias'">
+          <div *ngFor="let skill of person.skills" class="mini-item">
+            <div class="progress-label">{{ skill.name }}</div>
+            <app-progress-bar [progress]="skill.rate/5"></app-progress-bar>
+          </div>
+        </app-cv-mini-section>
+
+        <app-cv-mini-section [title]="'Idiomas'">
+          <div *ngFor="let language of person.languages" class="mini-item">
+            <div class="progress-label">{{ language.name }}</div>
+            <app-progress-bar [progress]="language.rate/5"></app-progress-bar>
+          </div>
+        </app-cv-mini-section>
+
+        <app-cv-mini-section [title]="'Hobbies'">
+          <div class="mini-item">{{ person.personalInformation.hobbies }}</div>
+        </app-cv-mini-section>
+
+      </div>
+      <div class="right-side">
+        <app-cv-section [title]="'Perfil Profesional'" [icon]="'i-person'">
+          <app-cv-sub-section>{{person.personalInformation.description}}</app-cv-sub-section>
+        </app-cv-section>
+
+        <app-cv-section [title]="'Experiencia Laboral'" [icon]="'i-work'">
+          <app-cv-sub-section *ngFor="let job of person.experience">
+            <div class="title-label">{{ job.title }} en {{ job.company }}</div>
+            <div class="dates-label">{{ getDate(job.startAt, job.finishAt) }}</div>
+            <div class="description-label">{{ job.description ? job.description : '' }}</div>
+          </app-cv-sub-section>
+        </app-cv-section>
+
+        <app-cv-section [title]="'Formación'" [icon]="'i-education'">
+          <app-cv-sub-section *ngFor="let career of person.education">
+            <div class="title-label">{{ career.title }} en {{ career.company }}, {{ career.city }}</div>
+            <div class="dates-label">{{ getDate(career.startAt, career.finishAt) }}</div>
+          </app-cv-sub-section>
+        </app-cv-section>
+
+        <app-cv-section [title]="'Cursos'" [icon]="'i-certificate'">
+          <app-cv-sub-section *ngFor="let certification of person.certifications">
+            <div class="title-label">{{ certification.title }}, {{ certification.company }}</div>
+            <div class="dates-label">{{ getSingleDate(certification.obtainedAt) }}</div>
+            <!-- falta la expiracion -->
+            <!-- falta el id de certificacion-->
+          </app-cv-sub-section>
+        </app-cv-section>
+      </div>
+    </div>
+  </div>
+</div>

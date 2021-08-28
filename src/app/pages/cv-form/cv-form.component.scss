@@ -1,0 +1,22 @@
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  background: rgb(211, 211, 211);
+  justify-content: space-around;
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+  }
+
+  .preview-container {
+    transform: scale(1);
+    transform-origin: 50% 0% 0px;
+    display: flex;
+    overflow: scroll;
+    margin: 20px;
+    height: 500px;
+  }
+}

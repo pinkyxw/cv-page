@@ -1,0 +1,48 @@
+.background {
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  .cv {
+    max-width: 800px;
+    background: white;
+  }
+}
+
+.cv-body {
+  display: flex;
+  flex-direction: row;
+
+  .left-side {
+    width: 300px;
+    text-align: center;
+  }
+
+  .link {
+    font-style: italic;
+    text-decoration-line: underline;
+    cursor: pointer;
+  }
+
+  .progress-label {
+    margin-bottom: 4px;
+  }
+
+  .title-label {
+    font-family: "Montserrat Regular";
+    font-size: 15px;
+  }
+  .dates-label {
+    color: rgb(179, 179, 179);
+  }
+  .description-label {
+    margin-left: 40px;
+    margin-top: 6px;
+    margin-bottom: 2px;
+    color: #505050;
+  }
+
+  .mini-item {
+    margin: 10px;
+  }
+
+}
