@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { AccordionModule } from './lib/accordion/accordion.module';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { ProgressBarComponent } from './components/progress-bar/progress-bar.com
 import { CvFormComponent } from './pages/cv-form/cv-form.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PreviewComponent } from './components/preview/preview.component';
+import  {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -26,8 +28,11 @@ import { PreviewComponent } from './components/preview/preview.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    AccordionModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }

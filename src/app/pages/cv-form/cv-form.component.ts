@@ -16,6 +16,7 @@ export class CvFormComponent implements OnInit {
     education: [] as Array<any>,
     certifications: [] as Array<any>,
   };
+  public collapsing = true;
 
   constructor() { }
 

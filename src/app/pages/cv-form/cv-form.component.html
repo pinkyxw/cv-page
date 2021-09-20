@@ -1,138 +1,234 @@
+
 <div class="main-container">
   <div class="form-container">
 
-    <!-- Personal info -->
-    <input type="text" name="name" placeholder="name" [(ngModel)]="person.personalInformation.name">
-    <input type="text" name="description" placeholder="description" [(ngModel)]="person.personalInformation.description">
-    <input type="text" name="shortDescription" placeholder="shortDescription" [(ngModel)]="person.personalInformation.shortDescription">
-    <input type="email" name="email" placeholder="email" [(ngModel)]="person.personalInformation.email">
-    <input type="phone" name="phone" placeholder="phone" [(ngModel)]="person.personalInformation.phone">
-    <input type="text" name="hobbies" placeholder="hobbies" [(ngModel)]="person.personalInformation.hobbies">
+    <!-- Accordion Start -->
+    <accordion [collapsing]="collapsing">
 
-    <!-- Links -->
-    <br>
-    <div *ngFor="let link of person.links; let i = index;">
-      <input type="text" name="alias" placeholder="alias" [(ngModel)]="person.links[i].alias">
-      <input type="url" name="url" placeholder="url" [(ngModel)]="person.links[i].url">
-    </div>
-    <button [disabled]="false" (click)="addToList('links')">
-      Add link
-    </button>
+      <!-- Personal info -->
+      <accordion-item>
+        <ng-template accordionTitle>
+          <div class="flex space-x-2">
+            <div class="icon i-person"></div>
+            <p>Personal information</p>
+          </div>
+        </ng-template>
+        <ng-template accordionContent>
+            <div class="p-4 personal-info-form">
+              <!-- Personal info -->
+              <input class="input" type="text" name="name" placeholder="name" [(ngModel)]="person.personalInformation.name">
+              <input class="input" type="text" name="description" placeholder="description" [(ngModel)]="person.personalInformation.description">
+              <input class="input" type="text" name="shortDescription" placeholder="shortDescription" [(ngModel)]="person.personalInformation.shortDescription">
+              <input class="input" type="email" name="email" placeholder="email" [(ngModel)]="person.personalInformation.email">
+              <input class="input" type="phone" name="phone" placeholder="phone" [(ngModel)]="person.personalInformation.phone">
+              <input class="input" type="text" name="hobbies" placeholder="hobbies" [(ngModel)]="person.personalInformation.hobbies">
+            </div>
+        </ng-template>
+      </accordion-item>
 
-    <!-- Languajes -->
-    <br>
-    <div *ngFor="let link of person.languages; let i = index;">
-      <input type="text" name="name" placeholder="name" [(ngModel)]="person.languages[i].name">
-      <input type="number" name="rate" placeholder="rate" [(ngModel)]="person.languages[i].rate">
-    </div>
-    <button [disabled]="false" (click)="addToList('languages')">
-      Add language
-    </button>
+      <!-- Links -->
+      <accordion-item>
+        <ng-template accordionTitle>
+          <div class="flex space-x-2">
+            <div class="icon i-person"></div>
+            <p>Links</p>
+          </div>
+        </ng-template>
+        <ng-template accordionContent>
+            <div class="p-4 tuple-form">
+              <!-- Links -->
+              <br>
+              <div *ngFor="let link of person.links; let i = index;" class="tuple-container">
+                <input class="input" type="text" name="alias" placeholder="alias" [(ngModel)]="person.links[i].alias">
+                <input class="input" type="url" name="url" placeholder="url" [(ngModel)]="person.links[i].url">
+              </div>
+              <button class="input-button" [disabled]="false" (click)="addToList('links')">
+                Add link
+              </button>
+            </div>
+        </ng-template>
+      </accordion-item>
 
-    <!-- Skills -->
-    <br>
-    <div *ngFor="let link of person.skills; let i = index;">
-      <input type="text" name="name" placeholder="name" [(ngModel)]="person.skills[i].name">
-      <input type="number" name="rate" placeholder="rate" [(ngModel)]="person.skills[i].rate">
-    </div>
-    <button [disabled]="false" (click)="addToList('skills')">
-      Add skill
-    </button>
+      <!-- Languajes -->
+      <accordion-item>
+        <ng-template accordionTitle>
+          <div class="flex space-x-2">
+            <div class="icon i-person"></div>
+            <p>Languajes</p>
+          </div>
+        </ng-template>
+        <ng-template accordionContent>
+            <div class="p-4 tuple-form">
+              <!-- Languajes -->
+              <br>
+              <div *ngFor="let link of person.languages; let i = index;" class="tuple-container">
+                <input class="input" type="text" name="name" placeholder="name" [(ngModel)]="person.languages[i].name">
+                <input class="input" type="number" name="rate" placeholder="rate" [(ngModel)]="person.languages[i].rate">
+              </div>
+              <button class="input-button" [disabled]="false" (click)="addToList('languages')">
+                Add language
+              </button>
+            </div>
+        </ng-template>
+      </accordion-item>
 
-    <!-- Experience -->
-    <br>
-    <div *ngFor="let link of person.experience; let i = index;">
-      <input type="text" name="title" placeholder="title" [(ngModel)]="person.experience[i].title">
-      <input type="text" name="company" placeholder="company" [(ngModel)]="person.experience[i].company">
-      <input type="text" name="description" placeholder="description" [(ngModel)]="person.experience[i].description">
-      <!-- <input type="text" name="city" placeholder="city" [(ngModel)]="person.experience[i].city"> -->
+      <!-- Skills -->
+      <accordion-item>
+        <ng-template accordionTitle>
+          <div class="flex space-x-2">
+            <div class="icon i-person"></div>
+            <p>Skills</p>
+          </div>
+        </ng-template>
+        <ng-template accordionContent>
+            <div class="p-4 tuple-form">
+              <!-- Skills -->
+              <br>
+              <div *ngFor="let link of person.skills; let i = index;" class="tuple-container">
+                <input class="input" type="text" name="name" placeholder="name" [(ngModel)]="person.skills[i].name">
+                <input class="input" type="number" name="rate" placeholder="rate" [(ngModel)]="person.skills[i].rate">
+              </div>
+              <button class="input-button" [disabled]="false" (click)="addToList('skills')">
+                Add skill
+              </button>
+            </div>
+        </ng-template>
+      </accordion-item>
 
-      <div>
-        <input type="checkbox" name="show" placeholder="show" [(ngModel)]="person.experience[i].startAt.show">
-        <label for="scales">show</label>
-      </div>
-      <input type="number" name="month" placeholder="month" [(ngModel)]="person.experience[i].startAt.month">
-      <input type="number" name="year" placeholder="year" [(ngModel)]="person.experience[i].startAt.year">
+      <!-- Experience -->
+      <accordion-item>
+        <ng-template accordionTitle>
+          <div class="flex space-x-2">
+            <div class="icon i-work"></div>
+            <p>Experience</p>
+          </div>
+        </ng-template>
+        <ng-template accordionContent>
+            <div class="p-4 tuple-form">
+              <!-- Experience -->
+              <br>
+              <div *ngFor="let link of person.experience; let i = index;" class="tuple-container experience-form">
+                <input class="input short" type="text" name="title" placeholder="title" [(ngModel)]="person.experience[i].title">
+                <input class="input short" type="text" name="company" placeholder="company" [(ngModel)]="person.experience[i].company">
+                <input class="input large" type="text" name="description" placeholder="description" [(ngModel)]="person.experience[i].description">
+                <!-- <input class="input" type="text" name="city" placeholder="city" [(ngModel)]="person.experience[i].city"> -->
 
-      <div>
-        <input type="checkbox" name="show" placeholder="show" [(ngModel)]="person.experience[i].finishAt.show">
-        <label for="scales">show</label>
-      </div>
-      <div>
-        <input type="checkbox" name="toPresent" placeholder="toPresent" [(ngModel)]="person.experience[i].finishAt.toPresent">
-        <label for="scales">toPresent</label>
-      </div>
-      <input type="number" name="month" placeholder="month" [(ngModel)]="person.experience[i].finishAt.month">
-      <input type="number" name="year" placeholder="year" [(ngModel)]="person.experience[i].finishAt.year">
+                <div class="input large">
+                  <input type="checkbox" name="show" placeholder="show" [(ngModel)]="person.experience[i].startAt.show">
+                  <label for="scales">show start date</label>
+                </div>
+                <input class="input short" type="number" name="month" placeholder="month" [(ngModel)]="person.experience[i].startAt.month">
+                <input class="input short" type="number" name="year" placeholder="year" [(ngModel)]="person.experience[i].startAt.year">
 
-    </div>
-    <button [disabled]="false" (click)="addToList('experience')">
-      Add job
-    </button>
+                <div class="input short">
+                  <input type="checkbox" name="show" placeholder="show" [(ngModel)]="person.experience[i].finishAt.show">
+                  <label for="scales">show end date</label>
+                </div>
+                <div class="input short">
+                  <input type="checkbox" name="toPresent" placeholder="toPresent" [(ngModel)]="person.experience[i].finishAt.toPresent">
+                  <label for="scales">toPresent</label>
+                </div>
+                <input class="input short" type="number" name="month" placeholder="month" [(ngModel)]="person.experience[i].finishAt.month">
+                <input class="input short" type="number" name="year" placeholder="year" [(ngModel)]="person.experience[i].finishAt.year">
 
-    <!-- Education -->
-    <br>
-    <div *ngFor="let link of person.education; let i = index;">
-      <input type="text" name="title" placeholder="title" [(ngModel)]="person.education[i].title">
-      <input type="text" name="company" placeholder="company" [(ngModel)]="person.education[i].company">
-      <input type="text" name="city" placeholder="city" [(ngModel)]="person.education[i].city">
+              </div>
+              <button class="input-button" [disabled]="false" (click)="addToList('experience')">
+                Add job
+              </button>
+            </div>
+        </ng-template>
+      </accordion-item>
 
-      <div>
-        <input type="checkbox" name="show" placeholder="show" [(ngModel)]="person.education[i].startAt.show">
-        <label for="scales">show</label>
-      </div>
-      <input type="number" name="year" placeholder="year" [(ngModel)]="person.education[i].startAt.year">
+      <!-- Education -->
+      <accordion-item>
+        <ng-template accordionTitle>
+          <div class="flex space-x-2">
+            <div class="icon i-education"></div>
+            <p>Education</p>
+          </div>
+        </ng-template>
+        <ng-template accordionContent>
+            <div class="p-4">
+              <!-- Education -->
+              <br>
+              <div *ngFor="let link of person.education; let i = index;">
+                <input type="text" name="title" placeholder="title" [(ngModel)]="person.education[i].title">
+                <input type="text" name="company" placeholder="company" [(ngModel)]="person.education[i].company">
+                <input type="text" name="city" placeholder="city" [(ngModel)]="person.education[i].city">
 
-      <div>
-        <input type="checkbox" name="show" placeholder="show" [(ngModel)]="person.education[i].finishAt.show">
-        <label for="scales">show</label>
-      </div>
-      <div>
-        <input type="checkbox" name="toPresent" placeholder="toPresent" [(ngModel)]="person.education[i].finishAt.toPresent">
-        <label for="scales">toPresent</label>
-      </div>
-      <input type="number" name="year" placeholder="year" [(ngModel)]="person.education[i].finishAt.year">
+                <div>
+                  <input type="checkbox" name="show" placeholder="show" [(ngModel)]="person.education[i].startAt.show">
+                  <label for="scales">show</label>
+                </div>
+                <input type="number" name="year" placeholder="year" [(ngModel)]="person.education[i].startAt.year">
 
-    </div>
-    <button [disabled]="false" (click)="addToList('education')">
-      Add education
-    </button>
+                <div>
+                  <input type="checkbox" name="show" placeholder="show" [(ngModel)]="person.education[i].finishAt.show">
+                  <label for="scales">show</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="toPresent" placeholder="toPresent" [(ngModel)]="person.education[i].finishAt.toPresent">
+                  <label for="scales">toPresent</label>
+                </div>
+                <input type="number" name="year" placeholder="year" [(ngModel)]="person.education[i].finishAt.year">
 
-    <!-- Certifications -->
-    <br>
-    <div *ngFor="let link of person.certifications; let i = index;">
-      <input type="text" name="title" placeholder="title" [(ngModel)]="person.certifications[i].title">
-      <input type="text" name="company" placeholder="company" [(ngModel)]="person.certifications[i].company">
+              </div>
+              <button class="input-button" [disabled]="false" (click)="addToList('education')">
+                Add education
+              </button>
+            </div>
+        </ng-template>
+      </accordion-item>
 
-      <div>
-        <input type="checkbox" name="show" placeholder="show" [(ngModel)]="person.certifications[i].obtainedAt.show">
-        <label for="scales">show</label>
-      </div>
-      <input type="number" name="month" placeholder="month" [(ngModel)]="person.certifications[i].obtainedAt.month">
-      <input type="number" name="year" placeholder="year" [(ngModel)]="person.certifications[i].obtainedAt.year">
+      <!-- Certifications -->
+      <accordion-item>
+        <ng-template accordionTitle>
+          <div class="flex space-x-2">
+            <div class="icon i-certificate"></div>
+            <p>Certifications</p>
+          </div>
+        </ng-template>
+        <ng-template accordionContent>
+            <div class="p-4">
+              <!-- Certifications -->
+              <br>
+              <div *ngFor="let link of person.certifications; let i = index;">
+                <input type="text" name="title" placeholder="title" [(ngModel)]="person.certifications[i].title">
+                <input type="text" name="company" placeholder="company" [(ngModel)]="person.certifications[i].company">
 
-      <div>
-        <input type="checkbox" name="show" placeholder="show" [(ngModel)]="person.certifications[i].expirationAt.show">
-        <label for="scales">show</label>
-      </div>
-      <input type="number" name="month" placeholder="month" [(ngModel)]="person.certifications[i].expirationAt.month">
-      <input type="number" name="year" placeholder="year" [(ngModel)]="person.certifications[i].expirationAt.year">
+                <div>
+                  <input type="checkbox" name="show" placeholder="show" [(ngModel)]="person.certifications[i].obtainedAt.show">
+                  <label for="scales">show</label>
+                </div>
+                <input type="number" name="month" placeholder="month" [(ngModel)]="person.certifications[i].obtainedAt.month">
+                <input type="number" name="year" placeholder="year" [(ngModel)]="person.certifications[i].obtainedAt.year">
 
-      <div>
-        <input type="checkbox" name="show" placeholder="show" [(ngModel)]="person.certifications[i].id.show">
-        <label for="scales">show</label>
-      </div>
-      <input type="text" name="id" placeholder="id" [(ngModel)]="person.certifications[i].id.value">
+                <div>
+                  <input type="checkbox" name="show" placeholder="show" [(ngModel)]="person.certifications[i].expirationAt.show">
+                  <label for="scales">show</label>
+                </div>
+                <input type="number" name="month" placeholder="month" [(ngModel)]="person.certifications[i].expirationAt.month">
+                <input type="number" name="year" placeholder="year" [(ngModel)]="person.certifications[i].expirationAt.year">
+
+                <div>
+                  <input type="checkbox" name="show" placeholder="show" [(ngModel)]="person.certifications[i].id.show">
+                  <label for="scales">show</label>
+                </div>
+                <input type="text" name="id" placeholder="id" [(ngModel)]="person.certifications[i].id.value">
 
 
-    </div>
-    <button [disabled]="false" (click)="addToList('certifications')">
-      Add certification
-    </button>
+              </div>
+              <button class="input-button" [disabled]="false" (click)="addToList('certifications')">
+                Add certification
+              </button>
+            </div>
+        </ng-template>
+      </accordion-item>
+
+    </accordion>
+    <!-- Accordion End -->
 
   </div>
-
-
 
   <div class="preview-container">
     <app-preview [person]="person"></app-preview>
