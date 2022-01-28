@@ -1,4 +1,10 @@
 
+<button class="download-button" (click)="downloadPdf()">Download PDF</button>
+<div id="download">
+  <img #canvas>
+  <a #downloadLink></a>
+</div>
+
 <div class="main-container">
   <div class="form-container">
 
@@ -10,7 +16,7 @@
         <ng-template accordionTitle>
           <div class="flex space-x-2">
             <div class="icon i-person"></div>
-            <p>Personal information</p>
+            <p class="accordion-label">Personal information</p>
           </div>
         </ng-template>
         <ng-template accordionContent>
@@ -31,7 +37,7 @@
         <ng-template accordionTitle>
           <div class="flex space-x-2">
             <div class="icon i-person"></div>
-            <p>Links</p>
+            <p class="accordion-label">Links</p>
           </div>
         </ng-template>
         <ng-template accordionContent>
@@ -54,7 +60,7 @@
         <ng-template accordionTitle>
           <div class="flex space-x-2">
             <div class="icon i-person"></div>
-            <p>Languajes</p>
+            <p class="accordion-label">Languajes</p>
           </div>
         </ng-template>
         <ng-template accordionContent>
@@ -77,7 +83,7 @@
         <ng-template accordionTitle>
           <div class="flex space-x-2">
             <div class="icon i-person"></div>
-            <p>Skills</p>
+            <p class="accordion-label">Skills</p>
           </div>
         </ng-template>
         <ng-template accordionContent>
@@ -100,7 +106,7 @@
         <ng-template accordionTitle>
           <div class="flex space-x-2">
             <div class="icon i-work"></div>
-            <p>Experience</p>
+            <p class="accordion-label">Experience</p>
           </div>
         </ng-template>
         <ng-template accordionContent>
@@ -144,7 +150,7 @@
         <ng-template accordionTitle>
           <div class="flex space-x-2">
             <div class="icon i-education"></div>
-            <p>Education</p>
+            <p class="accordion-label">Education</p>
           </div>
         </ng-template>
         <ng-template accordionContent>
@@ -185,7 +191,7 @@
         <ng-template accordionTitle>
           <div class="flex space-x-2">
             <div class="icon i-certificate"></div>
-            <p>Certifications</p>
+            <p class="accordion-label">Certifications</p>
           </div>
         </ng-template>
         <ng-template accordionContent>
@@ -231,7 +237,8 @@
   </div>
 
   <div class="preview-container">
-    <app-preview [person]="person"></app-preview>
+    <app-preview #preview id="preview" [person]="person"></app-preview>
   </div>
+
 </div>
 

@@ -16,14 +16,15 @@ button {
 .main-container {
   display: flex;
   flex-direction: row;
-  background: white;
-  justify-content: space-around;
+  background: rgb(255, 255, 255);
+  margin: 20px;
 
   .form-container {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
-    // width: 500px;
+    // max-width: 800px;
+    min-width: 400px;
+    margin-right: 20px;
 
     input {
       margin: 2px 0;
@@ -54,12 +55,25 @@ button {
   }
 
   .preview-container {
-    transform: scale(0.5);
-    transform-origin: 50% 0% 0px;
+    // size: a4;
+    transform-origin: 0% 0% 0px;
     display: flex;
-    overflow: scroll;
-    margin: 20px;
-    height: 500px;
+    // margin: 20px;
+    box-shadow: 6px 6px 20px 0px #00000061;
+
+    // transform: scale(0.5);
+    // @media (min-width: 950px) { transform: scale(0.6); }
+    // @media (min-width: 1030px) { transform: scale(0.7); }
+    // @media (min-width: 1110px) { transform: scale(0.8); }
+    // @media (min-width: 1190px) { transform: scale(0.9); }
+    // @media (min-width: 1270px) { transform: scale(1); }
+
+    zoom: 0.5;
+    @media (min-width: 950px) { zoom: 0.6; }
+    @media (min-width: 1030px) { zoom: 0.7; }
+    @media (min-width: 1110px) { zoom: 0.8; }
+    @media (min-width: 1190px) { zoom: 0.9; }
+    @media (min-width: 1270px) { zoom: 1; }
   }
 }
 
@@ -73,7 +87,10 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
 
+.accordion-label {
+  white-space: nowrap;
 }
 
 .tuple-form {
@@ -106,4 +123,9 @@ button {
     }
 
   }
+}
+
+.download-button {
+  color: black;
+  background-color: rgb(161, 161, 189);
 }

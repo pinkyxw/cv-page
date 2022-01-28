@@ -3,7 +3,9 @@
   display: flex;
   justify-content: center;
   .cv {
-    max-width: 800px;
+    // width: 800px;
+    width: 210mm;
+    height: 297mm;
     background: white;
   }
 }

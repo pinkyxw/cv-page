@@ -1,4 +1,26 @@
-<div class="background">
+<div id="preview" class="background">
+
+  <style>
+    @font-face {
+      font-family: 'Montserrat Regular';
+      src: url('../../../assets/fonts/montserrat-regular-webfont.woff2') format(woff2)
+    }
+
+    @font-face {
+      font-family: 'Montserrat Light';
+      src: url('../../../assets/fonts/montserrat-light-webfont.woff2') format(woff2)
+    }
+
+    @font-face {
+      font-family: 'Montserrat Bold';
+      src: url('../../../assets/fonts/montserrat-bold-webfont.woff2') format(woff2)
+    }
+
+    @font-face {
+      font-family: 'Montserrat SemiBold';
+      src: url('../../../assets/fonts/montserrat-semibold-webfont.woff2') format(woff2)
+    }
+  </style>
   <div class="cv">
     <app-cv-header [personalInformation]='person.personalInformation'></app-cv-header>
     <div class="cv-body">
